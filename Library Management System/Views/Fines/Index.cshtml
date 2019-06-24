@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Library_Management_System.Models.FineDue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Display fines</h2>
+
+<p>
+    @Html.ActionLink("Pay fine", "PayFine")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.card_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fine_due)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.card_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fine_due)
+        </td>
+    </tr>
+}
+
+</table>

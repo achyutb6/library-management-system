@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Library Management System</h1>
+    <p class="lead">Library Management System developed for the Course CS6360 - Database Design</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Book Search</h2>
+        <p>
+            Search for book and checkout
+        </p>
+        <p><a class="btn btn-default" href="/BookSearch">Book Search&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Checkin</h2>
+        <p>
+            Checkin book which have been loaned
+        </p>
+        <p><a class="btn btn-default" href="/Checkin">Checkin&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Borrower Management</h2>
+        <p>Manage the borrowers</p>
+        <p><a class="btn btn-default" href="/Borrower">Borrower Management &raquo;</a></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Update fine</h2>
+        <p>
+            Job which updates all fine.
+        </p>
+        <p><a class="btn btn-default" href="/Fines/UpdateFines">Update fine&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Pay Fine</h2>
+        <p>
+            Pay fine for loans.
+        </p>
+        <p><a class="btn btn-default" href="/Fines/PayFine">Pay Fine&raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Display Fines</h2>
+        <p>Displays the fine amout due by each borrower</p>
+        <p><a class="btn btn-default" href="/Fines">Display Fines &raquo;</a></p>
+    </div>
+</div>

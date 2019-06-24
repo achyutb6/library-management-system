@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Library_Management_System.Models.BookSearch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Book Search</h2>
+
+<p>
+    @using (Html.BeginForm("POST"))
+    {
+<p>
+        @Html.TextBox("Text", null, new { @class = "form-control input-lg w-75 m-3" , @placeholder =  "Search by ISBN,Title,Authors"  })
+            <input class="form-control btn btn-success m-3" type="submit" value="Search" />
+</p>
+}
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Authors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.availability)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Authors)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.availability)
+                </td>
+                <td>
+                    @if (item.availability == true) { @Html.ActionLink("Checkout", "Checkout", new { id = item.ISBN }); }
+                </td>
+            </tr>
+        }
+
+
+
+    </table>

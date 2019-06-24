@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Library_Management_System.Models.BookLoan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Loan Book</h2>
+
+<p>
+    @using (Html.BeginForm("POST"))
+    {
+    <p>
+        Title: @Html.TextBox("Text") <br />
+        <input type="submit" value="Search" />
+    </p>
+    }
+</p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Loan_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Borrower_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Card_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date_Out)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Due_Date)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Loan_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ISBN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Borrower_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Card_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date_Out)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Due_Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Checkin", "Checkin", new { id = item.Loan_ID })
+                </td>
+            </tr>
+        }
+
+    </table>

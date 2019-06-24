@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Library_Management_System.Models.Fines>
+
+@{
+    ViewBag.Title = "PayFine";
+}
+
+<h2>PayFine</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.loan_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fine_amt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.loan_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fine_amt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.paid)
+        </td>
+        <td>
+            @Html.ActionLink("Pay", "Pay", new { id = item.loan_id })
+        </td>
+    </tr>
+}
+
+</table>
